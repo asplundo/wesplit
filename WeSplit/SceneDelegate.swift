@@ -1,11 +1,3 @@
-//
-//  SceneDelegate.swift
-//  WeSplit
-//
-//  Created by Olle Asplund on 2019-10-08.
-//  Copyright © 2019 asplundo development. All rights reserved.
-//
-
 import UIKit
 import SwiftUI
 
