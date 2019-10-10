@@ -5,19 +5,22 @@ struct ContentView: View {
     let tipPercentages = [10, 15, 20 ,25 ,0]
     
     @State private var checkAmount = ""
-    @State private var numberOfPeople = 2
+    @State private var numberOfPeople = ""
     @State private var tipPercentage = 2
     
-    var totalPerPerson: Double {
-        let peopleCount = Double(numberOfPeople + 2)
+    var grandTotal: Double {
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(checkAmount) ?? 0
-        
         let tipValue = orderAmount / 100 * tipSelection
         let grandTotal = orderAmount + tipValue
-        let amountPerPerson = grandTotal / peopleCount
-        
-        return amountPerPerson
+        return grandTotal
+    }
+    
+    var totalPerPerson: Double {
+        if let peopleCount = Int(numberOfPeople) {
+            return grandTotal / Double(peopleCount)
+        }
+        return 0
     }
     
     var body: some View {
@@ -27,11 +30,9 @@ struct ContentView: View {
                     TextField("Amount", text: $checkAmount)
                         .keyboardType(.decimalPad)
                     
-                    Picker("Number of people", selection: $numberOfPeople) {
-                        ForEach(2..<100) {
-                            Text("\($0) people")
-                        }
-                    }
+                    TextField("Numner of People", text: $numberOfPeople)
+                        .keyboardType(.numberPad)
+                    
                 }
                 
                 Section(header: Text("How much tip do you want to leave?")) {
@@ -42,7 +43,11 @@ struct ContentView: View {
                     }.pickerStyle(SegmentedPickerStyle())
                 }
                 
-                Section(header: Text("Total per person")) {
+                Section(header: Text("Total amount")) {
+                    Text("$\(grandTotal, specifier: "%.2f")")
+                }
+                
+                Section(header: Text("Amount per person")) {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
                 }
             }.navigationBarTitle("WeSplit")
