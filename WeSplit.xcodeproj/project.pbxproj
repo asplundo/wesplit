@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10A69A822358E8EF006E72AB /* GreedyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A69A812358E8EF006E72AB /* GreedyModifier.swift */; };
 		10CB6DCF234D239A00AFA0CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB6DCE234D239A00AFA0CC /* AppDelegate.swift */; };
 		10CB6DD1234D239A00AFA0CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB6DD0234D239A00AFA0CC /* SceneDelegate.swift */; };
 		10CB6DD3234D239A00AFA0CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CB6DD2234D239A00AFA0CC /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10A69A812358E8EF006E72AB /* GreedyModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreedyModifier.swift; sourceTree = "<group>"; };
 		10CB6DCB234D239A00AFA0CC /* WeSplit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeSplit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10CB6DCE234D239A00AFA0CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10CB6DD0234D239A00AFA0CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10A69A7F2358E8A2006E72AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10A69A802358E8B4006E72AB /* Modifier */,
+				10CB6DD2234D239A00AFA0CC /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10A69A802358E8B4006E72AB /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				10A69A812358E8EF006E72AB /* GreedyModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		10CB6DC2234D239A00AFA0CC = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +75,9 @@
 		10CB6DCD234D239A00AFA0CC /* WeSplit */ = {
 			isa = PBXGroup;
 			children = (
+				10A69A7F2358E8A2006E72AB /* View */,
 				10CB6DCE234D239A00AFA0CC /* AppDelegate.swift */,
 				10CB6DD0234D239A00AFA0CC /* SceneDelegate.swift */,
-				10CB6DD2234D239A00AFA0CC /* ContentView.swift */,
 				10CB6DD4234D239F00AFA0CC /* Assets.xcassets */,
 				10CB6DD9234D239F00AFA0CC /* LaunchScreen.storyboard */,
 				10CB6DDC234D239F00AFA0CC /* Info.plist */,
@@ -148,6 +167,7 @@
 			files = (
 				10CB6DCF234D239A00AFA0CC /* AppDelegate.swift in Sources */,
 				10CB6DD1234D239A00AFA0CC /* SceneDelegate.swift in Sources */,
+				10A69A822358E8EF006E72AB /* GreedyModifier.swift in Sources */,
 				10CB6DD3234D239A00AFA0CC /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

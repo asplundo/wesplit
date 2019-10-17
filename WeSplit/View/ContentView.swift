@@ -16,11 +16,19 @@ struct ContentView: View {
         return grandTotal
     }
     
+    var tipSelection: Int {
+        return tipPercentages[tipPercentage]
+    }
+    
     var totalPerPerson: Double {
         if let peopleCount = Int(numberOfPeople) {
             return grandTotal / Double(peopleCount)
         }
         return 0
+    }
+    
+    var totalAmountView: some View {
+        Text("$\(grandTotal, specifier: "%.2f")")
     }
     
     var body: some View {
@@ -32,7 +40,6 @@ struct ContentView: View {
                     
                     TextField("Numner of People", text: $numberOfPeople)
                         .keyboardType(.numberPad)
-                    
                 }
                 
                 Section(header: Text("How much tip do you want to leave?")) {
@@ -44,7 +51,12 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Total amount")) {
-                    Text("$\(grandTotal, specifier: "%.2f")")
+                    if tipSelection == 0 {
+                        totalAmountView
+                            .greedyStyle()
+                    } else {
+                        totalAmountView
+                    }
                 }
                 
                 Section(header: Text("Amount per person")) {
@@ -54,6 +66,8 @@ struct ContentView: View {
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
